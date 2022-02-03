@@ -105,6 +105,10 @@ namespace Lab9
                 Console.WriteLine("Денежная разность не может быть меньше 0. Уменьшаемое остаётся без изменений.");
             }
         }
-        
+        // Перегрузка операторов
+        public static Money operator ++(Money m1)
+        {
+            return new Money { Kop = m1.Kop + 1 };
+        }
     }
 }

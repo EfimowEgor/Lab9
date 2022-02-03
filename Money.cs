@@ -130,5 +130,19 @@ namespace Lab9
                 return m1;
             }
         }
+
+        // Приведение типа
+
+        // Неявное преобразование
+        public static implicit operator int(Money m1)
+        {
+            return m1.Rub;
+        }
+        // Явное преобразование
+        public static explicit operator double(Money m1)
+        {
+            return m1.Kop / 100.0;
+        }
+
     }
 }

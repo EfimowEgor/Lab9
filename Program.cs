@@ -25,6 +25,7 @@ namespace Lab9
             acc3.Minus(acc4);
             acc3.ShowValues();
 
+            // Overload inc
             Money acc5 = new Money(0, 99);
             acc5.ShowValues();
             acc5++;
@@ -32,9 +33,19 @@ namespace Lab9
             acc5++;
             acc5.ShowValues();
 
+            // Overload dec
             Money acc6 = new Money(0, 1);
             acc6--;
             acc6.ShowValues();
+
+            Money acc7 = new Money(123, 87);
+
+            // Implicit
+            int x = acc7;
+            Console.WriteLine(x);
+            // Explicit
+            double y = (double)acc7;
+            Console.WriteLine(y);
 
             Console.WriteLine(Money.GetQuant);
 

@@ -25,7 +25,7 @@ namespace Lab9
             acc3.Minus(acc4);
             acc3.ShowValues();
 
-            Money acc5 = new Money(0, 0);
+            Money acc5 = new Money(0, 99);
             acc5.ShowValues();
             acc5++;
             acc5.ShowValues();

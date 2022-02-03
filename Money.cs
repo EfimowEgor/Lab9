@@ -106,9 +106,13 @@ namespace Lab9
             }
         }
         // Перегрузка операторов
+        
+        // Перегрузка инкремента
         public static Money operator ++(Money m1)
         {
-            return new Money { Kop = m1.Kop + 1 };
+            m1.Kop += 1;
+            return m1;
         }
+        // Перегрузка декремента 
     }
 }

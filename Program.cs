@@ -39,6 +39,7 @@ namespace Lab9
             acc6.ShowValues();
 
             Money acc7 = new Money(123, 87);
+            acc7.ShowValues();
 
             // Implicit
             int x = acc7;

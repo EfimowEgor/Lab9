@@ -144,5 +144,41 @@ namespace Lab9
             return m1.Kop / 100.0;
         }
 
+        // Бинарные операции
+
+        // Right
+        public static Money operator -(Money m1, int Number)
+        {
+            int KopSum = m1.Rub * 100 + m1.Kop;
+            if (KopSum >= Number)
+            {
+                KopSum -= Number;
+                m1.Rub = KopSum / 100;
+                m1.Kop = KopSum % 100;
+                return m1;
+            }
+            else
+            {
+                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение не изменено");
+                return m1;
+            }
+        }
+        // Left
+        public static Money operator -(int Number, Money m1)
+        {
+            int KopSum = m1.Rub * 100 + m1.Kop;
+            if (KopSum <= Number)
+            {
+                Number -= KopSum;
+                m1.Rub = Number / 100;
+                m1.Kop = Number % 100;
+                return m1;
+            }
+            else
+            {
+                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение не изменено");
+                return m1;
+            }
+        }
     }
 }

@@ -73,7 +73,7 @@ namespace Lab9
         }
         public void ShowValues()
         {
-            Console.WriteLine($"У вас {Rub} руб. и {Kop} коп.");
+            Console.WriteLine($"{Rub} руб. {Kop} коп.");
         }
         // Статическая функция 
         public static void Minus(Money m1, Money m2)

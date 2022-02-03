@@ -48,6 +48,9 @@ namespace Lab9
             double y = (double)acc7;
             Console.WriteLine(y);
 
+            MoneyArr ar = new MoneyArr(5);
+            ar.ShowElems();
+            Console.WriteLine(MoneyArr.GetCount);
             Console.WriteLine(Money.GetQuant);
 
         }

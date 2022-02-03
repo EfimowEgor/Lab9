@@ -11,13 +11,21 @@ namespace Lab9
         static Random rnd = new Random();
         static int count = 0;
         Money[] arr = null;
-        int size;
+        public static int GetCount
+        {
+            get
+            {
+                return count;
+            }
+        }
         public MoneyArr()
         {
+            count += 1;
             arr = null;
         }
         public MoneyArr(int size)
         {
+            count += 1;
             arr = new Money[size];
             for (int i = 0; i < arr.Length; i++)
             {
@@ -26,6 +34,12 @@ namespace Lab9
 
             }
         }
-
+        public void ShowElems()
+        {
+            foreach (Money m in arr)
+            {
+                m.ShowValues();
+            }
+        }
     }
 }

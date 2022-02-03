@@ -18,6 +18,7 @@ namespace Lab9
             }
             set
             {
+                // Когда будет сделан ввод уберется
                 if (value < 0)
                 {
                     Console.WriteLine("Количество рублей не может быть меньше 0");
@@ -35,6 +36,7 @@ namespace Lab9
             }
             set 
             {
+                // Когда будет сделан ввод уберется
                 if (value < 0)
                 {
                     Console.WriteLine("Число копеек не может быть меньше 0");
@@ -149,13 +151,14 @@ namespace Lab9
         // Right
         public static Money operator -(Money m1, int Number)
         {
+            Money tmp = new Money();
             int KopSum = m1.Rub * 100 + m1.Kop;
             if (KopSum >= Number)
             {
                 KopSum -= Number;
-                m1.Rub = KopSum / 100;
-                m1.Kop = KopSum % 100;
-                return m1;
+                tmp.Rub = KopSum / 100;
+                tmp.Kop = KopSum % 100;
+                return tmp;
             }
             else
             {
@@ -166,19 +169,28 @@ namespace Lab9
         // Left
         public static Money operator -(int Number, Money m1)
         {
+            Money tmp = new Money();
             int KopSum = m1.Rub * 100 + m1.Kop;
             if (KopSum <= Number)
             {
                 Number -= KopSum;
-                m1.Rub = Number / 100;
-                m1.Kop = Number % 100;
-                return m1;
+                tmp.Rub = Number / 100;
+                tmp.Kop = Number % 100;
+                return tmp;
             }
             else
             {
                 Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение не изменено");
                 return m1;
             }
+        }
+        public static bool operator >(Money m1, Money m2)
+        {
+            return m1.Rub * 100 + m1.Kop > m2.Rub * 100 + m2.Kop;
+        }
+        public static bool operator <(Money m1, Money m2)
+        {
+            return !(m1.Rub * 100 + m1.Kop > m2.Rub * 100 + m2.Kop);
         }
     }
 }

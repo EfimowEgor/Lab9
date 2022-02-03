@@ -11,6 +11,29 @@ namespace Lab9
         static Random rnd = new Random();
         static int count = 0;
         Money[] arr = null;
+
+        public int Size
+        {
+            get
+            {
+                return arr.Length;
+            }
+        }
+        public Money this[int index]
+        {
+            get
+            {
+                if (index >= 0 && index < arr.Length)
+                    return arr[index];
+                else
+                    throw new IndexOutOfRangeException();
+            }
+            set
+            {
+                if (index >= 0 && index < arr.Length)
+                    arr[index] = value;
+            }
+        }
         public static int GetCount
         {
             get
@@ -33,6 +56,18 @@ namespace Lab9
                 arr[i] = m;
 
             }
+        }
+        public Money FindMax()
+        {
+            Money tmpMax = new Money();
+            foreach (Money elem in arr)
+            {
+                if(elem > tmpMax)
+                {
+                    tmpMax = elem;
+                }
+            }
+            return tmpMax;
         }
         public void ShowElems()
         {

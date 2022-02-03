@@ -18,7 +18,7 @@ namespace Lab9
             Console.WriteLine();
 
             // Метод класса
-            Money acc3 = new Money(12, 0);
+            Money acc3 = new Money(-12, 0);
             acc3.ShowValues();
             Money acc4 = new Money(4, 93);
             acc4.ShowValues();
@@ -31,6 +31,10 @@ namespace Lab9
             acc5.ShowValues();
             acc5++;
             acc5.ShowValues();
+
+            Money acc6 = new Money(0, 1);
+            acc6--;
+            acc6.ShowValues();
 
             Console.WriteLine(Money.GetQuant);
 

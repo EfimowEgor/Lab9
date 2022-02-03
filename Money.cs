@@ -114,5 +114,21 @@ namespace Lab9
             return m1;
         }
         // Перегрузка декремента 
+        public static Money operator --(Money m1)
+        {
+            int sumKopRub = m1.Rub * 100 + m1.Kop;
+            if (sumKopRub > 0)
+            {
+                sumKopRub -= 1;
+                m1.Rub = sumKopRub / 100;
+                m1.Kop = sumKopRub % 100;
+                return m1;
+            }
+            else
+            {
+                Console.WriteLine("Нельзя убрать копейку. Значение осталось без изменений.");
+                return m1;
+            }
+        }
     }
 }

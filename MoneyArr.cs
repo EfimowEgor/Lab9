@@ -26,7 +26,7 @@ namespace Lab9
                 if (index >= 0 && index < arr.Length)
                     return arr[index];
                 else
-                    throw new IndexOutOfRangeException();
+                    throw new ArgumentException();
             }
             set
             {

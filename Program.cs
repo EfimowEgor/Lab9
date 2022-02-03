@@ -7,9 +7,9 @@ namespace Lab9
         static void Main(string[] args)
         {
             ////Статическая функция 
-            //Money acc1 = new Money(0, 0);
+            //Money acc1 = new Money(1, 0);
             //acc1.ShowValues();
-            //Money acc2 = new Money(0, 0);
+            //Money acc2 = new Money(3, 0);
             //acc2.ShowValues();
             //// В результате вычитания изменяется Money mn1
             //Money.Minus(acc1, acc2);
@@ -34,8 +34,8 @@ namespace Lab9
             //acc5.ShowValues();
 
             //// Overload dec
-            //Money acc6 = new Money(0, 1);
-            //acc6--;
+            //Money acc6 = new Money(0, 1000);
+            ////acc6--;
             //acc6.ShowValues();
 
             //Money acc7 = new Money(123, 87);
@@ -55,8 +55,15 @@ namespace Lab9
             Money test = new Money();
             test = ar.FindMax();
             test.ShowValues();
-
-
+            try
+            {
+                ar[0].ShowValues();
+                ar[100].ShowValues();
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("неправильно задан индекс");
+            }
         }
     }
 }

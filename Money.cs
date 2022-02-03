@@ -78,33 +78,43 @@ namespace Lab9
             Console.WriteLine($"{Rub} руб. {Kop} коп.");
         }
         // Статическая функция 
-        public static void Minus(Money m1, Money m2)
+        public static Money Minus(Money m1, Money m2)
         {
+            Money tmp = new Money();
             int sumKop1 = m1.Rub * 100 + m1.Kop;
             int sumKop2 = m2.Rub * 100 + m2.Kop;
             if(sumKop1 >= sumKop2)
             {
-                m1.Rub = (sumKop1 - sumKop2) / 100;
-                m1.Kop = (sumKop1 - sumKop2) % 100;
+                tmp.Rub = (sumKop1 - sumKop2) / 100;
+                tmp.Kop = (sumKop1 - sumKop2) % 100;
+                return tmp;
             }
             else
             {
-                Console.WriteLine("Денежная разность не может быть меньше 0. Уменьшаемое остаётся без изменений.");
+                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение рублей и копеек результаты установлены на 0 0");
+                tmp.Rub = 0;
+                tmp.Kop = 0;
+                return tmp;
             }
         }
         // Метод класса
-        public void Minus(Money m2)
+        public Money Minus(Money m2)
         {
+            Money tmp = new Money();
             int sumKopMethod = this.Rub * 100 + this.Kop;
             int sumM2 = m2.Rub * 100 + m2.Kop;
             if (sumKopMethod >= sumM2)
             {
-                this.Rub = (sumKopMethod - sumM2) / 100;
-                this.Kop = (sumKopMethod - sumM2) % 100;
+                tmp.Rub = (sumKopMethod - sumM2) / 100;
+                tmp.Kop = (sumKopMethod - sumM2) % 100;
+                return tmp;
             }
             else
             {
-                Console.WriteLine("Денежная разность не может быть меньше 0. Уменьшаемое остаётся без изменений.");
+                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение рублей и копеек результаты установлены на 0 0");
+                tmp.Rub = 0;
+                tmp.Kop = 0;
+                return tmp;
             }
         }
         // Перегрузка операторов
@@ -128,7 +138,7 @@ namespace Lab9
             }
             else
             {
-                Console.WriteLine("Нельзя убрать копейку. Значение осталось без изменений.");
+                Console.WriteLine("Нельзя убрать копейку. Значение рублей и копеек установлено на 0 0.");
                 return m1;
             }
         }
@@ -162,8 +172,10 @@ namespace Lab9
             }
             else
             {
-                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение не изменено");
-                return m1;
+                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение рублей и копеек результаты установлены на 0 0");
+                tmp.Rub = 0;
+                tmp.Kop = 0;
+                return tmp;
             }
         }
         // Left
@@ -180,8 +192,27 @@ namespace Lab9
             }
             else
             {
-                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение не изменено");
-                return m1;
+                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение рублей и копеек результаты установлены на 0 0");
+                tmp.Rub = 0;
+                tmp.Kop = 0;
+                return tmp;
+            }
+        }
+        public static Money operator -(Money m1, Money m2)
+        {
+            Money tmpMoney = new Money();
+            if(m1 > m2)
+            {
+                tmpMoney.Rub = ((m1.Rub * 100 + m1.Kop) - (m2.Rub * 100 + m2.Kop)) / 100;
+                tmpMoney.Kop = ((m1.Rub * 100 + m1.Kop) - (m2.Rub * 100 + m2.Kop)) % 100;
+                return tmpMoney;
+            }
+            else
+            {
+                Console.WriteLine("Операция не совершена. Результирующее значение не может быть меньше 0. Значение рублей и копеек результаты установлены на 0 0");
+                tmpMoney.Rub = 0;
+                tmpMoney.Kop = 0;
+                return tmpMoney;
             }
         }
         public static bool operator >(Money m1, Money m2)

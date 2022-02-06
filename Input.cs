@@ -8,7 +8,7 @@ namespace Lab9
 {
     class Input
     {
-        private static int GetValues(int min, int max, string msg)
+        public static int GetValues(int min, int max, string msg)
         {
             int Number;
             bool isRead;

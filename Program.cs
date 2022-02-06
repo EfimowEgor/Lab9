@@ -6,27 +6,34 @@ namespace Lab9
     {
         static void Main(string[] args)
         {
-            ////Статическая функция 
-            //Money acc1 = new Money(1, 0);
+            // Part 1
+
+            //Статическая функция 
+            //Money acc1 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             //acc1.ShowValues();
-            //Money acc2 = new Money(3, 0);
+            //Money acc2 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             //acc2.ShowValues();
-            //// В результате вычитания изменяется Money mn1
+
+            // Статическая функция
             //Money.Minus(acc1, acc2);
             //acc1.ShowValues();
 
-            //Console.WriteLine();
+            //Console.WriteLine(); 
 
-            //// Метод класса
-            //Money acc3 = new Money(-12, 0);
+            // Метод класса
+
+            //Money acc3 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             //acc3.ShowValues();
-            //Money acc4 = new Money(4, 93);
+            //Money acc4 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             //acc4.ShowValues();
             //acc3.Minus(acc4);
             //acc3.ShowValues();
+            //Console.WriteLine(Money.GetQuant);
 
-            //// Overload inc
-            //Money acc5 = new Money(0, 99);
+            // Part 2
+
+            // Overload inc
+            //Money acc5 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             //acc5.ShowValues();
             //acc5++;
             //acc5.ShowValues();
@@ -34,11 +41,11 @@ namespace Lab9
             //acc5.ShowValues();
 
             //// Overload dec
-            //Money acc6 = new Money(0, 1000);
+            //Money acc6 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             ////acc6--;
             //acc6.ShowValues();
 
-            //Money acc7 = new Money(123, 87);
+            //Money acc7 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             //acc7.ShowValues();
 
             //// Implicit
@@ -48,11 +55,15 @@ namespace Lab9
             //double y = (double)acc7;
             //Console.WriteLine(y);
 
-            MoneyArr ar = new MoneyArr(5);
+            // Пример бинарных операций допишу на месте
+
+            // Part 3
+
+
+            MoneyArr ar = new MoneyArr(Input.GetValues(1, 5, "Введите длину массива"));
             ar.ShowElems();
-            Console.WriteLine(MoneyArr.GetCount);
-            Console.WriteLine(Money.GetQuant);
             Money test = new Money();
+            Console.WriteLine("Max");
             test = ar.FindMax();
             test.ShowValues();
             try
@@ -65,11 +76,12 @@ namespace Lab9
                 Console.WriteLine("неправильно задан индекс");
             }
 
-            MoneyArr arr = new MoneyArr(2, 1);
+            MoneyArr arr = new MoneyArr(Input.GetValues(1, 5, "Введите длину массива"), 1);
             arr.ShowElems();
             Money test2 = new Money();
             test2 = arr.FindMax();
             test2.ShowValues();
+            Console.WriteLine(MoneyArr.GetCount);
         }
     }
 }

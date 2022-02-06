@@ -70,18 +70,14 @@ namespace Lab9
         public Money FindMax()
         {
             Money tmpMax = new Money();
-            if(arr != null)
+            foreach (Money elem in arr)
             {
-                foreach (Money elem in arr)
+                if (elem > tmpMax)
                 {
-                    if (elem > tmpMax)
-                    {
-                        tmpMax = elem;
-                    }
+                    tmpMax = elem;
                 }
-                return tmpMax;
             }
-            return null;
+            return tmpMax;
         }
         public void ShowElems()
         {

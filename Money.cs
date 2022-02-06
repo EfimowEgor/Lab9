@@ -207,5 +207,18 @@ namespace Lab9
         {
             return !(m1.Rub * 100 + m1.Kop > m2.Rub * 100 + m2.Kop);
         }
+        public static bool operator ==(Money m1, Money m2)
+        {
+            return m1.Rub == m2.Rub && m1.Kop == m2.Kop;
+        }
+        public static bool operator !=(Money m1, Money m2)
+        {
+            return !(m1.Rub == m2.Rub && m1.Kop == m2.Kop);
+        }
+        public override bool Equals(object obj)
+        {
+            Money m = (Money)obj;
+            return this.Rub == m.Rub && this.Kop == m.Kop;
+        }
     }
 }

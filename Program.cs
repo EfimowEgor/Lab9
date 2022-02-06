@@ -61,28 +61,36 @@ namespace Lab9
             // Part 3
 
 
-            MoneyArr ar = new MoneyArr(Input.GetValues(1, 5, "Введите длину массива"));
-            ar.ShowElems();
-            Money test = new Money();
-            Console.WriteLine("Max");
-            test = ar.FindMax();
-            test.ShowValues();
+            //MoneyArr ar = new MoneyArr(Input.GetValues(1, 5, "Введите длину массива"));
             try
             {
-                ar[0].ShowValues();
-                ar[100].ShowValues();
+                MoneyArr ar = new MoneyArr();
+                ar.ShowElems();
+                Money test = new Money();
+                Console.WriteLine("Max");
+                test = ar.FindMax();
+                test.ShowValues();
+                try
+                {
+                    ar[0].ShowValues();
+                    ar[100].ShowValues();
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine("неправильно задан индекс");
+                }
             }
-            catch (ArgumentException)
+            catch (NullReferenceException)
             {
-                Console.WriteLine("неправильно задан индекс");
+                Console.WriteLine("Нельзя работать с null");
             }
 
             MoneyArr arr = new MoneyArr(Input.GetValues(1, 5, "Введите длину массива"), 1);
             arr.ShowElems();
-            Money test2 = new Money();
-            test2 = arr.FindMax();
-            test2.ShowValues();
-            Console.WriteLine(MoneyArr.GetCount);
+            //Money test2 = new Money();
+            //test2 = arr.FindMax();
+            //test2.ShowValues();
+            //Console.WriteLine(MoneyArr.GetCount);
         }
     }
 }

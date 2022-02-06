@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lab9
 {
-    class MoneyArr
+    public class MoneyArr
     {
-        static Random rnd = new Random();
+        static Random rnd = new Random(100101);
         static int count = 0;
         Money[] arr = null;
 
@@ -53,7 +53,7 @@ namespace Lab9
             arr = new Money[size];
             for (int i = 0; i < arr.Length; i++)
             {
-                Money m = new Money(rnd.Next(0, 1000), rnd.Next(0, 1000));
+                Money m = new Money(rnd.Next(1, 1000), rnd.Next(1, 1000));
                 arr[i] = m;
             }
         }
@@ -70,20 +70,26 @@ namespace Lab9
         public Money FindMax()
         {
             Money tmpMax = new Money();
-            foreach (Money elem in arr)
+            if(arr != null)
             {
-                if(elem > tmpMax)
+                foreach (Money elem in arr)
                 {
-                    tmpMax = elem;
+                    if (elem > tmpMax)
+                    {
+                        tmpMax = elem;
+                    }
                 }
+                return tmpMax;
             }
-            return tmpMax;
+            return null;
         }
         public void ShowElems()
         {
-            foreach (Money m in arr)
             {
-                m.ShowValues();
+                foreach (Money m in arr)
+                {
+                    m.ShowValues();
+                }
             }
         }
     }

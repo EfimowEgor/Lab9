@@ -14,8 +14,8 @@ namespace Lab9
             //Money acc2 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             //acc2.ShowValues();
 
-            // Статическая функция
-            //Money.Minus(acc1, acc2);
+            //Статическая функция
+            //acc1 = Money.Minus(acc1, acc2);
             //acc1.ShowValues();
 
             //Console.WriteLine(); 
@@ -26,7 +26,7 @@ namespace Lab9
             //acc3.ShowValues();
             //Money acc4 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
             //acc4.ShowValues();
-            //acc3.Minus(acc4);
+            //acc3 = acc3.Minus(acc4);
             //acc3.ShowValues();
             //Console.WriteLine(Money.GetQuant);
 
@@ -40,9 +40,9 @@ namespace Lab9
             //acc5++;
             //acc5.ShowValues();
 
-            //// Overload dec
+            // Overload dec
             //Money acc6 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
-            ////acc6--;
+            //acc6--;
             //acc6.ShowValues();
 
             //Money acc7 = new Money(Input.GetValues(0, 1000, "Введите количество рублей"), Input.GetValues(0, 1000, "Введите количество копеек"));
@@ -56,7 +56,8 @@ namespace Lab9
             //Console.WriteLine(y);
 
             // Пример бинарных операций допишу на месте
-
+            //acc7 = acc7 - acc6;
+            //acc7.ShowValues();
             // Part 3
 
 

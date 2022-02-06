@@ -18,14 +18,7 @@ namespace Lab9
             }
             set
             {
-                // Когда будет сделан ввод уберется
-                if (value < 0)
-                {
-                    Console.WriteLine("Количество рублей не может быть меньше 0");
-                    rub = 0;
-                }
-                else
-                    rub = value; 
+                rub = value; 
             }
         }
         public int Kop
@@ -36,22 +29,13 @@ namespace Lab9
             }
             set 
             {
-                // Когда будет сделан ввод уберется
-                if (value < 0)
+                if (value > 99)
                 {
-                    Console.WriteLine("Число копеек не может быть меньше 0");
-                    kop = 0;
+                    rub += value / 100;
+                    kop = value % 100;
                 }
                 else
-                {
-                    if (value > 99)
-                    {
-                        rub += value / 100;
-                        kop = value % 100;
-                    }
-                    else
-                        kop = value;
-                }
+                    kop = value;
             }
         }
         public static int GetQuant

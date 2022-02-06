@@ -64,7 +64,7 @@ namespace Lab9
             for (int i = 0; i < arr.Length; ++i)
             {
                 Money m = new Money();
-                Input.GetMoney(m);
+                arr[i] = Input.GetMoney(m);
             }
         }
         public Money FindMax()

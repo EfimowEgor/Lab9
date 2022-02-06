@@ -46,6 +46,7 @@ namespace Lab9
             count += 1;
             arr = null;
         }
+        // Create arr RNS
         public MoneyArr(int size)
         {
             count += 1;
@@ -54,7 +55,16 @@ namespace Lab9
             {
                 Money m = new Money(rnd.Next(0, 1000), rnd.Next(0, 1000));
                 arr[i] = m;
-
+            }
+        }
+        public MoneyArr(int size, int option)
+        {
+            count += 1;
+            arr = new Money[size];
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                Money m = new Money();
+                Input.GetMoney(m);
             }
         }
         public Money FindMax()

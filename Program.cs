@@ -64,6 +64,11 @@ namespace Lab9
             {
                 Console.WriteLine("неправильно задан индекс");
             }
+
+            MoneyArr arr = new MoneyArr(4, 1);
+            arr.ShowElems();
+            test = arr.FindMax();
+            test.ShowValues();
         }
     }
 }
